@@ -13,22 +13,15 @@ const getRandomInt = (min, max) => {
 };
 
 const questionEvenOrOdd = (number) => {
-  const answer =
-    readlineSync.question(`Answer "yes" if the number is even, otherwise answer "no". 
+  const userAnswer =
+    readlineSync.question(`Answer 'yes' if the number is even, otherwise answer 'no'. 
 Question: ${number}
 Your answer: `);
-  return answer;
+  return userAnswer;
 };
 
-const isUserRight = (number, userAnswer) => {
-  if (
-    (number % 2 === 0 && userAnswer === "yes") ||
-    (number % 2 !== 0 && userAnswer === "no")
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+const rigthAnswerToQuenstionEvenOrOdd = (number) => {
+  return (number % 2 === 0) ? 'yes' : 'no';
 };
 
 const gameEvenOrOdd = () => {
@@ -37,20 +30,13 @@ const gameEvenOrOdd = () => {
     const randomMax = 101;
     const randonInt = getRandomInt(randomMin, randomMax);
     const userAnswer = questionEvenOrOdd(randonInt);
-    const answerCorrectness = isUserRight(randonInt, userAnswer);
+    const rightAnswer = rigthAnswerToQuenstionEvenOrOdd (randonInt);
 
-    if (answerCorrectness === true) {
+    if (rightAnswer === userAnswer) {
       console.log(`Correct!`);
     } else {
-      if (userAnswer === "no") {
-        console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.`);
-      } 
-      if (userAnswer === 'yes') {
-        console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.`);
-      } else {
-        console.log(`Your answer is wrong ;(`);
-      }
-      console.log(`Let's try again, ${userName}!`);
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+        console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
