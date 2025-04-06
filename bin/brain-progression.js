@@ -32,21 +32,20 @@ const getRandomInt = (min, max) => {
 };*/
 
 const textQuestionProgression = (min, max) => {
-  const missingNumber = "..";
+  const missingNumber = '..';
   const lengthProgression = 10;
-  const randomIndex = Math.floor(Math.random() * lengthProgression + 1);
+  const randomIndex = Math.floor(Math.random() * lengthProgression);
   const firstTermProgression = getRandomInt(min, max);
   const commonDifference = getRandomInt(min, max);
-  let arithmeticProgression = `${firstTermProgression}`;
+  let arithmeticProgression = '';
   let termProgression = 0;
-  for (let i = 1; i <= lengthProgression - 2; i += 1) {
+  for (let i = 0; i < lengthProgression; i += 1) {
     termProgression = firstTermProgression + commonDifference * i;
     if (i === randomIndex) {
       termProgression = missingNumber;
     }
     arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
   }
-
   console.log(`What number is missing in the progression? 
 Question: ${arithmeticProgression}`);
 
@@ -55,7 +54,7 @@ Question: ${arithmeticProgression}`);
 };
 
 const userAnswerToQuestion = () => {
-  const userAnswer = readlineSync.question(`Your answer: `);
+  const userAnswer = readlineSync.question('Your answer: ');
   return userAnswer;
 };
 
