@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from "../src/getnumber.js";
-import game from "../src/index.js";
+import { getRandomInt } from 'src/getnumber.js';
+import game from '../src/index.js';
 
 const textQuestionProgression = (min, max) => {
-  const missingNumber = "..";
+  const missingNumber = '..';
   const lengthProgression = 10;
   const randomIndex = Math.floor(Math.random() * lengthProgression);
   const firstTermProgression = getRandomInt(min, max);

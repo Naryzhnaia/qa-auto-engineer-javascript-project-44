@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from "../src/getnumber.js";
-import game from "../src/index.js";
+import { getRandomInt } from '../src/getnumber.js';
+import game from '../src/index.js';
 
 const textQuestionMathproblem = (min, max) => {
-  const arithmeticOperator = ["+", "-", "*"];
+  const arithmeticOperator = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * arithmeticOperator.length);
   const randomInt1 = getRandomInt(min, max);
   const randomInt2 = getRandomInt(min, max);

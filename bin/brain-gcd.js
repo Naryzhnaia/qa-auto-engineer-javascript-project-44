@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from "../src/getnumber.js";
-import game from "../src/index.js";
+import { getRandomInt } from '../src/getnumber.js';
+import game from '../src/index.js';
 
 const textQuestionGcd = (min, max) => {
   const randomInt1 = getRandomInt(min, max);
