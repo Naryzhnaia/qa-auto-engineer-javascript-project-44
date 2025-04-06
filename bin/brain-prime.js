@@ -21,7 +21,7 @@ Question: ${randomInt}`);
     }
     divider += 1;
   }
-  const rightAnswer = 'yes';
+  const rightAnswer = "yes";
   return rightAnswer;
 };
 

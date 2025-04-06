@@ -8,7 +8,7 @@ const game = (question) => {
     const randomMin = 1;
     const randomMax = 101;
     const rightAnswer = question(randomMin, randomMax);
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question("Your answer: ");
 
     if (rightAnswer === userAnswer) {
       console.log(`Correct!`);

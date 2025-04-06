@@ -4,12 +4,12 @@ import { getRandomInt } from "../src/getnumber.js";
 import game from "../src/index.js";
 
 const textQuestionProgression = (min, max) => {
-  const missingNumber = '..';
+  const missingNumber = "..";
   const lengthProgression = 10;
   const randomIndex = Math.floor(Math.random() * lengthProgression);
   const firstTermProgression = getRandomInt(min, max);
   const commonDifference = getRandomInt(min, max);
-  let arithmeticProgression = '';
+  let arithmeticProgression = "";
   let termProgression = 0;
   for (let i = 0; i < lengthProgression; i += 1) {
     termProgression = firstTermProgression + commonDifference * i;

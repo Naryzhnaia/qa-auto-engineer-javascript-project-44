@@ -8,7 +8,7 @@ const textQuestionEvenOrOdd = (min, max) => {
   console.log(`Answer 'yes' if the number is even, otherwise answer 'no'. 
 Question: ${randomInt}`);
 
-  const rightAnswer = randomInt % 2 === 0 ? 'yes' : 'no';
+  const rightAnswer = randomInt % 2 === 0 ? "yes" : "no";
   return rightAnswer;
 };
 
