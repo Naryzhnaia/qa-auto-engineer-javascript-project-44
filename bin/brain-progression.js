@@ -9,14 +9,18 @@ const textQuestionProgression = (min, max) => {
   const randomIndex = Math.floor(Math.random() * lengthProgression);
   const firstTermProgression = getRandomInt(min, max);
   const commonDifference = getRandomInt(min, max);
-  let arithmeticProgression = "";
+  let arithmeticProgression = '';
   let termProgression = 0;
   for (let i = 0; i < lengthProgression; i += 1) {
     termProgression = firstTermProgression + commonDifference * i;
     if (i === randomIndex) {
       termProgression = missingNumber;
     }
+    if (i === 0) {
+    arithmeticProgression = `${termProgression}`;
+    } else {
     arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
+    }
   }
   console.log(`What number is missing in the progression? 
 Question: ${arithmeticProgression}`);
