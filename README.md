@@ -7,4 +7,8 @@
 
 [Asciinema for brain-calc game](https://asciinema.org/a/5M4z2gdp8k1a8M4U2PgHmv58d)
 
-[Asciinema for brain-gcd game] (https://asciinema.org/a/WxubN3sWDGkeAgIINr02XwKze)
+[Asciinema for brain-gcd game](https://asciinema.org/a/WxubN3sWDGkeAgIINr02XwKze)
+
+[Asciinema for brain-progression game](https://asciinema.org/a/bvULHE4hATBeusYIxsTfJ5Mif)
+
+[Asciinema for brain-prime game](https://asciinema.org/a/M8fWhdPHYugUuIk6zIV1K4gUa)
