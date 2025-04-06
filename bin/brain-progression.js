@@ -13,24 +13,6 @@ const getRandomInt = (min, max) => {
   return randomInt;
 };
 
-/*const createArithmeticProgression = (min, max) => {
-  const missingNumber = "..";
-  const lengthProgression = 10;
-  const randomIndex = Math.floor(Math.random() * lengthProgression + 1);
-  const firstTermProgression = getRandomInt(min, max);
-  const commonDifference = getRandomInt(min, max);
-  let arithmeticProgression = `${firstTermProgression}`;
-  let termProgression = 0;
-  for (let i = 1; i <= lengthProgression - 2; i += 1) {
-    if (i === randomIndex) {
-      arithmeticProgression = `${arithmeticProgression} ${missingNumber}`;
-    }
-    termProgression = firstTermProgression + commonDifference * i;
-    arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
-  }
-  return arithmeticProgression;
-};*/
-
 const textQuestionProgression = (min, max) => {
   const missingNumber = '..';
   const lengthProgression = 10;

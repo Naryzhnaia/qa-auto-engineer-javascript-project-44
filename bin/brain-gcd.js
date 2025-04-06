@@ -13,27 +13,24 @@ const getRandomInt = (min, max) => {
   return randomInt;
 };
 
-const textQuestionGcd = (firstNumber, secondNumber) => {
-  return `Find the greatest common divisor of given numbers. 
-Question: ${firstNumber} ${secondNumber}
-Your answer: `;
-};
+const textQuestionGcd = (min, max) => {
+  const randomInt1 = getRandomInt(min, max);
+  const randomInt2 = getRandomInt(min, max);
+  console.log(`Find the greatest common divisor of given numbers. 
+Question: ${randomInt1} ${randomInt2}`);
 
-const userAnswerToQuestion = (question) => {
-  const userAnswer = readlineSync.question(question);
-  return userAnswer;
-};
-
-const rigthAnswerToQuenstionGcd = (firstNumber, secondNumber) => {
-  const minNumber = Math.min(firstNumber, secondNumber);
+  const minNumber = Math.min(randomInt1, randomInt2);
   let gcdNumber = 1;
   let divider = 2;
-  let newFirstNumber = firstNumber;
-  let newSecondNumber = secondNumber;
-  
+  let newFirstNumber = randomInt1;
+  let newSecondNumber = randomInt2;
+
   while (divider <= minNumber) {
     if (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
-      while (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
+      while (
+        newFirstNumber % divider === 0 &&
+        newSecondNumber % divider === 0
+      ) {
         gcdNumber = gcdNumber * divider;
         newFirstNumber = newFirstNumber / divider;
         newSecondNumber = newSecondNumber / divider;
@@ -41,19 +38,22 @@ const rigthAnswerToQuenstionGcd = (firstNumber, secondNumber) => {
     }
     divider += 1;
   }
-  return `${String(gcdNumber)}`;
+  const rightAnswer = `${String(gcdNumber)}`;
+  return rightAnswer;
+};
+
+const userAnswerToQuestion = () => {
+  const userAnswer = readlineSync.question("Your answer: ");
+  return userAnswer;
 };
 
 const gameGcd = () => {
-  for (let i = 1; i <= 3; i += 1) {
+  const roundsNumber = 3;
+  for (let i = 1; i <= roundsNumber; i += 1) {
     const randomMin = 1;
     const randomMax = 100;
-    const randonInt1 = getRandomInt(randomMin, randomMax);
-    const randomInt2 = getRandomInt(randomMin, randomMax);
-    const userAnswer = userAnswerToQuestion(
-      textQuestionGcd(randonInt1, randomInt2)
-    );
-    const rightAnswer = rigthAnswerToQuenstionGcd(randonInt1, randomInt2);
+    const rightAnswer = textQuestionGcd(randomMin, randomMax);
+    const userAnswer = userAnswerToQuestion();
 
     if (rightAnswer === userAnswer) {
       console.log(`Correct!`);
