@@ -1,5 +1,5 @@
-import { greeting } from "../src/cli.js";
-import readlineSync from "readline-sync";
+import greeting from '../cli.js';
+import readlineSync from 'readline-sync';
 
 const game = (question) => {
   const userName = greeting();
@@ -8,7 +8,7 @@ const game = (question) => {
     const randomMin = 1;
     const randomMax = 101;
     const rightAnswer = question(randomMin, randomMax);
-    const userAnswer = readlineSync.question("Your answer: ");
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (rightAnswer === userAnswer) {
       console.log(`Correct!`);

@@ -17,10 +17,7 @@ Question: ${randomInt1} ${randomInt2}`);
 
   while (divider <= minNumber) {
     if (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
-      while (
-        newFirstNumber % divider === 0 &&
-        newSecondNumber % divider === 0
-      ) {
+      while (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
         gcdNumber = gcdNumber * divider;
         newFirstNumber = newFirstNumber / divider;
         newSecondNumber = newSecondNumber / divider;
