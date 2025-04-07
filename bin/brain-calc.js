@@ -12,8 +12,15 @@ const textQuestionMathproblem = (min, max) => {
   console.log(`What is the result of the expression? 
 Question: ${mathProblem}`);
 
-  const rightAnswer = `${eval(mathProblem)}`;
-  return rightAnswer;
+ if (arithmeticOperator[randomIndex] === '+') {
+  return String(randomInt1 + randomInt2);
+ }
+ if (arithmeticOperator[randomIndex] === '-') {
+  return String(randomInt1 - randomInt2);
+ }
+ if (arithmeticOperator[randomIndex] === '*') {
+  return String(randomInt1 * randomInt2);
+ }
 };
 
 game(textQuestionMathproblem);

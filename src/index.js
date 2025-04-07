@@ -1,4 +1,4 @@
-import greeting from '../cli.js';
+import greeting from '../src/cli.js';
 import readlineSync from 'readline-sync';
 
 const game = (question) => {
