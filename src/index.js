@@ -1,5 +1,5 @@
-import greeting from '../src/cli.js';
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
 const game = (question) => {
   const userName = greeting();
@@ -13,14 +13,12 @@ const game = (question) => {
     if (rightAnswer === userAnswer) {
       console.log(`Correct!`);
     } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default game;

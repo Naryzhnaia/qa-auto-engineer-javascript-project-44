@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from '../src/getnumber.js';
+import getRandomInt from '../src/getnumber.js';
 import game from '../src/index.js';
 
 const textQuestionPrimeNumber = (min, max) => {

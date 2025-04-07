@@ -5,4 +5,4 @@ const getRandomInt = (min, max) => {
   return randomInt;
 };
 
-export { getRandomInt };
+export default getRandomInt;

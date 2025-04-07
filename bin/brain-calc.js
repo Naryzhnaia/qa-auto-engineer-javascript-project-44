@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from '../src/getnumber.js';
+import getRandomInt from '../src/getnumber.js';
 import game from '../src/index.js';
 
 const textQuestionMathproblem = (min, max) => {
@@ -11,16 +11,17 @@ const textQuestionMathproblem = (min, max) => {
   const mathProblem = `${randomInt1} ${arithmeticOperator[randomIndex]} ${randomInt2}`;
   console.log(`What is the result of the expression? 
 Question: ${mathProblem}`);
-
- if (arithmeticOperator[randomIndex] === '+') {
-  return String(randomInt1 + randomInt2);
- }
- if (arithmeticOperator[randomIndex] === '-') {
-  return String(randomInt1 - randomInt2);
- }
- if (arithmeticOperator[randomIndex] === '*') {
-  return String(randomInt1 * randomInt2);
- }
+  let rightAnswer = null;
+  if (arithmeticOperator[randomIndex] === '+') {
+    rightAnswer = String(randomInt1 + randomInt2);
+  }
+  if (arithmeticOperator[randomIndex] === '-') {
+    rightAnswer = String(randomInt1 - randomInt2);
+  }
+  if (arithmeticOperator[randomIndex] === '*') {
+    rightAnswer = String(randomInt1 * randomInt2);
+  }
+  return rightAnswer;
 };
 
 game(textQuestionMathproblem);

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from '../src/getnumber.js';
+import getRandomInt from '../src/getnumber.js';
 import game from '../src/index.js';
 
 const textQuestionProgression = (min, max) => {
@@ -17,9 +17,9 @@ const textQuestionProgression = (min, max) => {
       termProgression = missingNumber;
     }
     if (i === 0) {
-    arithmeticProgression = `${termProgression}`;
+      arithmeticProgression = `${termProgression}`;
     } else {
-    arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
+      arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
     }
   }
   console.log(`What number is missing in the progression? 
