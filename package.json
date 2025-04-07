@@ -26,6 +26,7 @@
   "type": "module",
   "homepage": "https://github.com/Naryzhnaia/qa-auto-engineer-javascript-project-44#readme",
   "dependencies": {
+    "eslint-plugin-import": "^2.31.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
