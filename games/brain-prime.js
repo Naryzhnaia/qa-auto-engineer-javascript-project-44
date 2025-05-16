@@ -1,28 +1,30 @@
-#!/usr/bin/env node
-
 import getRandomInt from '../src/getnumber.js';
-import game from '../src/index.js';
+import playGame from '../src/index.js';
 
-const textQuestionPrimeNumber = (min, max) => {
-  const randomInt = getRandomInt(min, max);
-  console.log(`Answer "yes" if given number is prime. Otherwise answer "no". 
-Question: ${randomInt}`);
+const descriptionOfQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  if (randomInt < 2) {
-    const rightAnswer = 'yes';
-    return rightAnswer;
+const isPrime = (number) => {
+  if (number < 2) {
+    return true;
   }
-
   let divider = 2;
-  while (divider <= randomInt / 2) {
-    if (randomInt % divider === 0) {
-      const rightAnswer = 'no';
-      return rightAnswer;
+  while (divider <= number / 2) {
+    if (number % divider === 0) {
+      return false;
     }
     divider += 1;
   }
-  const rightAnswer = 'yes';
-  return rightAnswer;
+  return true;
 };
 
-game(textQuestionPrimeNumber);
+const getMathProblemAndAnswer = () => {
+  const randomMin = 1;
+  const randomMax = 101;
+  const question = getRandomInt(randomMin, randomMax);
+  const rightAnswer = isPrime(question) === true ? 'yes' : 'no';
+  return [question, rightAnswer];
+};
+
+export default () => {
+  playGame(descriptionOfQuestion, getMathProblemAndAnswer);
+};

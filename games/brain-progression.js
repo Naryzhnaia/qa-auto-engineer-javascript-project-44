@@ -1,14 +1,16 @@
-#!/usr/bin/env node
-
 import getRandomInt from '../src/getnumber.js';
-import game from '../src/index.js';
+import playGame from '../src/index.js';
 
-const textQuestionProgression = (min, max) => {
+const descriptionOfQuestion = 'What number is missing in the progression?';
+
+const getMathProblemAndAnswer = () => {
+  const randomMin = 1;
+  const randomMax = 101;
   const missingNumber = '..';
   const lengthProgression = 10;
   const randomIndex = Math.floor(Math.random() * lengthProgression);
-  const firstTermProgression = getRandomInt(min, max);
-  const commonDifference = getRandomInt(min, max);
+  const firstTermProgression = getRandomInt(randomMin, randomMax);
+  const commonDifference = getRandomInt(randomMin, randomMax);
   let arithmeticProgression = '';
   let termProgression = 0;
   for (let i = 0; i < lengthProgression; i += 1) {
@@ -22,11 +24,12 @@ const textQuestionProgression = (min, max) => {
       arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
     }
   }
-  console.log(`What number is missing in the progression? 
-Question: ${arithmeticProgression}`);
 
-  const rightAnswer = firstTermProgression + commonDifference * randomIndex;
-  return String(rightAnswer);
+  const question = `${arithmeticProgression}`;
+  const rightAnswer = String(firstTermProgression + commonDifference * randomIndex);
+  return [question, rightAnswer];
 };
 
-game(textQuestionProgression);
+export default () => {
+  playGame(descriptionOfQuestion, getMathProblemAndAnswer);
+};

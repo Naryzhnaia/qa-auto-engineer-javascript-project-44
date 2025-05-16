@@ -1,27 +1,33 @@
-#!/usr/bin/env node
-
 import getRandomInt from '../src/getnumber.js';
-import game from '../src/index.js';
+import playGame from '../src/index.js';
 
-const textQuestionMathproblem = (min, max) => {
+const descriptionOfQuestion = 'What is the result of the expression?';
+
+const getMathProblemAndAnswer = () => {
+  const randomMin = 1;
+  const randomMax = 101;
   const arithmeticOperator = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * arithmeticOperator.length);
-  const randomInt1 = getRandomInt(min, max);
-  const randomInt2 = getRandomInt(min, max);
+  const randomInt1 = getRandomInt(randomMin, randomMax);
+  const randomInt2 = getRandomInt(randomMin, randomMax);
   const mathProblem = `${randomInt1} ${arithmeticOperator[randomIndex]} ${randomInt2}`;
-  console.log(`What is the result of the expression? 
-Question: ${mathProblem}`);
   let rightAnswer = null;
-  if (arithmeticOperator[randomIndex] === '+') {
-    rightAnswer = String(randomInt1 + randomInt2);
+  switch (arithmeticOperator[randomIndex]) {
+    case '+':
+      rightAnswer = String(randomInt1 + randomInt2);
+      break;
+    case '-':
+      rightAnswer = String(randomInt1 - randomInt2);
+      break;
+    case '*':
+      rightAnswer = String(randomInt1 * randomInt2);
+      break;
+    default:
+      'No operator';
   }
-  if (arithmeticOperator[randomIndex] === '-') {
-    rightAnswer = String(randomInt1 - randomInt2);
-  }
-  if (arithmeticOperator[randomIndex] === '*') {
-    rightAnswer = String(randomInt1 * randomInt2);
-  }
-  return rightAnswer;
+  return [mathProblem, rightAnswer];
 };
 
-game(textQuestionMathproblem);
+export default () => {
+  playGame(descriptionOfQuestion, getMathProblemAndAnswer);
+};

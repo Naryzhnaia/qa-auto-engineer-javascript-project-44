@@ -1,23 +1,21 @@
-#!/usr/bin/env node
-
 import getRandomInt from '../src/getnumber.js';
-import game from '../src/index.js';
+import playGame from '../src/index.js';
 
-const textQuestionGcd = (min, max) => {
-  const randomInt1 = getRandomInt(min, max);
-  const randomInt2 = getRandomInt(min, max);
-  console.log(`Find the greatest common divisor of given numbers. 
-Question: ${randomInt1} ${randomInt2}`);
+const descriptionOfQuestion = 'Find the greatest common divisor of given numbers.';
 
-  const minNumber = Math.min(randomInt1, randomInt2);
+const findGcd = (firstNumber, secondNumber) => {
+  const minNumber = Math.min(firstNumber, secondNumber);
   let gcdNumber = 1;
   let divider = 2;
-  let newFirstNumber = randomInt1;
-  let newSecondNumber = randomInt2;
+  let newFirstNumber = firstNumber;
+  let newSecondNumber = secondNumber;
 
   while (divider <= minNumber) {
     if (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
-      while (newFirstNumber % divider === 0 && newSecondNumber % divider === 0) {
+      while (
+        newFirstNumber % divider === 0 &&
+        newSecondNumber % divider === 0
+      ) {
         gcdNumber *= divider;
         newFirstNumber /= divider;
         newSecondNumber /= divider;
@@ -25,8 +23,19 @@ Question: ${randomInt1} ${randomInt2}`);
     }
     divider += 1;
   }
-  const rightAnswer = `${String(gcdNumber)}`;
-  return rightAnswer;
+  return gcdNumber;
 };
 
-game(textQuestionGcd);
+const getQuestionAndAnswer = () => {
+  const randomMin = 1;
+  const randomMax = 101;
+  const randomInt1 = getRandomInt(randomMin, randomMax);
+  const randomInt2 = getRandomInt(randomMin, randomMax);
+  const question = `${randomInt1} ${randomInt2}`;
+  const rightAnswer = String(findGcd(randomInt1, randomInt2));
+  return [question, rightAnswer];
+};
+
+export default () => {
+  playGame(descriptionOfQuestion, getQuestionAndAnswer);
+};

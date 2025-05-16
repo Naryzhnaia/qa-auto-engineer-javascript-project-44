@@ -1,15 +1,16 @@
-#!/usr/bin/env node
-
 import getRandomInt from '../src/getnumber.js';
-import game from '../src/index.js';
+import playGame from '../src/index.js';
 
-const textQuestionEvenOrOdd = (min, max) => {
-  const randomInt = getRandomInt(min, max);
-  console.log(`Answer "yes" if the number is even, otherwise answer "no". 
-Question: ${randomInt}`);
+const descriptionOfQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const rightAnswer = randomInt % 2 === 0 ? 'yes' : 'no';
-  return rightAnswer;
+const getQuestionAndAnswer = () => {
+  const randomMin = 1;
+  const randomMax = 101;
+  const question = getRandomInt(randomMin, randomMax);
+  const rightAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
 
-game(textQuestionEvenOrOdd);
+export default () => {
+  playGame(descriptionOfQuestion, getQuestionAndAnswer);
+};
