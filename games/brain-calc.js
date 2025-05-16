@@ -10,8 +10,8 @@ const getMathProblemAndAnswer = () => {
   const randomIndex = Math.floor(Math.random() * arithmeticOperator.length);
   const randomInt1 = getRandomInt(randomMin, randomMax);
   const randomInt2 = getRandomInt(randomMin, randomMax);
-  const mathProblem = `${randomInt1} ${arithmeticOperator[randomIndex]} ${randomInt2}`;
-  let rightAnswer = null;
+  const question = `${randomInt1} ${arithmeticOperator[randomIndex]} ${randomInt2}`;
+  let rightAnswer;
   switch (arithmeticOperator[randomIndex]) {
     case '+':
       rightAnswer = String(randomInt1 + randomInt2);
@@ -25,7 +25,7 @@ const getMathProblemAndAnswer = () => {
     default:
       'No operator';
   }
-  return [mathProblem, rightAnswer];
+  return [question, rightAnswer];
 };
 
 export default () => {
