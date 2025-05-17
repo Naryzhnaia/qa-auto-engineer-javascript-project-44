@@ -14,7 +14,7 @@ const makeProgression = (firstTerm, commonDifference, index, progressionLength) 
     }
     if (i === 0) {
       arithmeticProgression = `${termProgression}`
-    } 
+    }
     else {
       arithmeticProgression = `${arithmeticProgression} ${termProgression}`
     }
