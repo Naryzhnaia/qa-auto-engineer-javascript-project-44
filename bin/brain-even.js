@@ -2,4 +2,4 @@
 
 import evenGame from '../games/brain-even.js'
 
-evenGame();
+evenGame()
