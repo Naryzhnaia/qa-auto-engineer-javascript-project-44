@@ -17,8 +17,8 @@ const makeProgression = (firstTerm, commonDifference, index, progressionLength) 
     } else {
       arithmeticProgression = `${arithmeticProgression} ${termProgression}`;
     }
-    return arithmeticProgression;
   }
+  return arithmeticProgression;
 };
 
 const getMathProblemAndAnswer = () => {
