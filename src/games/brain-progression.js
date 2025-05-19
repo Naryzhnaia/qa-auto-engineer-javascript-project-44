@@ -1,7 +1,7 @@
 import getRandomInt from '../src/getnumber.js'
 import playGame from '../src/index.js'
 
-const descriptionOfQuestion = 'What number is missing in the progression?'
+const description = 'What number is missing in the progression?'
 
 const makeProgression = (firstTerm, commonDifference, index, progressionLength) => {
   const missingNumber = '..'
@@ -35,5 +35,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(descriptionOfQuestion, getMathProblemAndAnswer)
+  playGame(description, getMathProblemAndAnswer)
 }

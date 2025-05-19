@@ -1,7 +1,7 @@
 import getRandomInt from '../src/getnumber.js'
 import playGame from '../src/index.js'
 
-const descriptionOfQuestion = 'What is the result of the expression?'
+const description = 'What is the result of the expression?'
 
 const getMathProblemAndAnswer = () => {
   const randomMin = 1
@@ -29,5 +29,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(descriptionOfQuestion, getMathProblemAndAnswer)
+  playGame(description, getMathProblemAndAnswer)
 }

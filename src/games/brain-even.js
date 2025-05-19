@@ -1,7 +1,7 @@
 import getRandomInt from '../src/getnumber.js'
 import playGame from '../src/index.js'
 
-const descriptionOfQuestion = 'Answer "yes" if the number is even, otherwise answer "no".'
+const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (number) => {
   return number % 2 === 0 ? true : false
@@ -15,5 +15,5 @@ const getQuestionAndAnswer = () => {
 }
 
 export default () => {
-  playGame(descriptionOfQuestion, getQuestionAndAnswer)
+  playGame(description, getQuestionAndAnswer)
 }

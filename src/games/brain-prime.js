@@ -1,7 +1,7 @@
 import getRandomInt from '../src/getnumber.js'
 import playGame from '../src/index.js'
 
-const descriptionOfQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -26,5 +26,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(descriptionOfQuestion, getMathProblemAndAnswer)
+  playGame(description, getMathProblemAndAnswer)
 }

@@ -1,7 +1,7 @@
 import getRandomInt from '../src/getnumber.js'
 import playGame from '../src/index.js'
 
-const descriptionOfQuestion = 'Find the greatest common divisor of given numbers.'
+const description = 'Find the greatest common divisor of given numbers.'
 
 const findGcd = (firstNumber, secondNumber) => {
   const minNumber = Math.min(firstNumber, secondNumber)
@@ -34,5 +34,5 @@ const getQuestionAndAnswer = () => {
 }
 
 export default () => {
-  playGame(descriptionOfQuestion, getQuestionAndAnswer)
+  playGame(description, getQuestionAndAnswer)
 }
