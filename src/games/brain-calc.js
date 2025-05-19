@@ -23,7 +23,7 @@ const getMathProblemAndAnswer = () => {
       rightAnswer = String(randomInt1 * randomInt2)
       break
     default:
-      'No operator'
+      throw new Error(`Unknown arithmeticOperator: '${arithmeticOperator[randomIndex]}'!`)
   }
   return [question, rightAnswer]
 }
