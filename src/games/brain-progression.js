@@ -4,22 +4,18 @@ import playGame from '../index.js'
 const description = 'What number is missing in the progression?'
 
 const makeProgression = (firstTerm, commonDifference, index, progressionLength) => {
-  const missingNumber = '..'
-  let arithmeticProgression = ''
-  let termProgression = 0
+  const missingTerm = '..'
+  let termProgression
+  const arithmeticProgression = []
   for (let i = 0; i < progressionLength; i += 1) {
     termProgression = firstTerm + commonDifference * i
     if (i === index) {
-      termProgression = missingNumber
+      arithmeticProgression.push(missingTerm)
+      continue
     }
-    if (i === 0) {
-      arithmeticProgression = `${termProgression}`
-    }
-    else {
-      arithmeticProgression = `${arithmeticProgression} ${termProgression}`
-    }
+    arithmeticProgression.push(termProgression)
   }
-  return arithmeticProgression
+  return arithmeticProgression.join(' ')
 }
 
 const getMathProblemAndAnswer = () => {
