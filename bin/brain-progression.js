@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import runFindMissingTermGame from '../src/games/brain-progression.js'
+import runProgressionGame from '../src/games/brain-progression.js'
 
-runFindMissingTermGame()
+runProgressionGame()
