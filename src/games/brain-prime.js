@@ -1,5 +1,5 @@
-import getRandomInt from '../src/getnumber.js'
-import playGame from '../src/index.js'
+import getRandomInt from '../utils.js'
+import playGame from '../index.js'
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
