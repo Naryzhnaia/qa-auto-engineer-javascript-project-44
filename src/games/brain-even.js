@@ -1,12 +1,12 @@
 import getRandomInt from '../utils.js'
-import playGame from '../index.js'
+import runGame from '../index.js'
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEven = (number) => {
   return number % 2 === 0 ? true : false
 }
-const getQuestionAndAnswer = () => {
+const generateProblem = () => {
   const randomMin = 1
   const randomMax = 101
   const question = getRandomInt(randomMin, randomMax)
@@ -15,5 +15,5 @@ const getQuestionAndAnswer = () => {
 }
 
 export default () => {
-  playGame(description, getQuestionAndAnswer)
+  runGame(description, generateProblem)
 }

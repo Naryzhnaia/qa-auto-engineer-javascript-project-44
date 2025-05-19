@@ -1,9 +1,9 @@
 import getRandomInt from '../utils.js'
-import playGame from '../index.js'
+import runGame from '../index.js'
 
 const description = 'What is the result of the expression?'
 
-const getMathProblemAndAnswer = () => {
+const generateProblem = () => {
   const randomMin = 1
   const randomMax = 101
   const arithmeticOperator = ['+', '-', '*']
@@ -29,5 +29,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(description, getMathProblemAndAnswer)
+  runGame(description, generateProblem)
 }

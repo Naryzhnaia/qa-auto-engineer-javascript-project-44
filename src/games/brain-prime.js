@@ -1,5 +1,5 @@
 import getRandomInt from '../utils.js'
-import playGame from '../index.js'
+import runGame from '../index.js'
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -17,7 +17,7 @@ const isPrime = (number) => {
   return true
 }
 
-const getMathProblemAndAnswer = () => {
+const generateProblem = () => {
   const randomMin = 1
   const randomMax = 101
   const question = getRandomInt(randomMin, randomMax)
@@ -26,5 +26,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(description, getMathProblemAndAnswer)
+  runGame(description, generateProblem)
 }

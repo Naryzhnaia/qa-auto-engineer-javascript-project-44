@@ -1,5 +1,5 @@
 import getRandomInt from '../utils.js'
-import playGame from '../index.js'
+import runGame from '../index.js'
 
 const description = 'What number is missing in the progression?'
 
@@ -18,7 +18,7 @@ const makeProgression = (firstTerm, commonDifference, index, progressionLength) 
   return arithmeticProgression.join(' ')
 }
 
-const getMathProblemAndAnswer = () => {
+const generateProblem = () => {
   const randomMin = 1
   const randomMax = 101
   const progressionLength = 10
@@ -31,5 +31,5 @@ const getMathProblemAndAnswer = () => {
 }
 
 export default () => {
-  playGame(description, getMathProblemAndAnswer)
+  runGame(description, generateProblem)
 }
